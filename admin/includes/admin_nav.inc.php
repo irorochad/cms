@@ -63,13 +63,13 @@
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li> 
                     <li>
-                    <a href="javascript:;" data-toggle="collapse" data-target="#post_dropdown"><i class="fa fa-fw fa-bar-chart-o"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                    <a href="javascript:;" data-toggle="collapse" data-target="#post_dropdown"><i class="fa fa-fw fa-bar-chart-o"></i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="post_dropdown" class="collapse">
                             <li>
                                 <a href="posts.php">View Posts</a>
                             </li>
                             <li>
-                                <a href="add-post.php">Add Posts</a>
+                                <a href="posts.php?source=addPost">Add Posts</a>
                             </li>
                         </ul>
                     </li>
