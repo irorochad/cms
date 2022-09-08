@@ -21,7 +21,13 @@ include "includes/header.inc.php";
                 </h1>
 
                 <?php
-                $query = "SELECT * FROM posts";
+                if(isset($_GET['category'])) {
+                    $the_cat_id = $_GET['category'];
+                }
+
+
+
+                $query = "SELECT * FROM posts WHERE post_category_id = $the_cat_id";
 
                 $fetch_all_posts_data = mysqli_query($db_Connection, $query);
 

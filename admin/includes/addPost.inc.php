@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST['postBtn'])) {
-    $post_cat_Id = $_POST['post_category_id'];
+    $post_cat_Id = $_POST['post_category'];
     $postTitle = $_POST['post_title'];
     $postAuthor = $_POST['post_author'];
     $postStatus = $_POST['post_status'];
@@ -38,8 +38,19 @@ if (isset($_POST['postBtn'])) {
         <input type="text" class="form-control" placeholder="Post title" name="post_title">
     </div>
     <div class="form-group">
-        <label for="post_Cat_id">Post Category Id</label>
-        <input type="text" class="form-control" name="post_category_id">
+        <select name="post_category" id="post_category">
+            <?php
+            $query = "SELECT * FROM categories";
+            $get_all_cats = mysqli_query($db_Connection, $query);
+
+            while ($row = mysqli_fetch_assoc($get_all_cats)) {
+                $cat_title = $row['cat_title'];
+                $cat_id = $row['cat_id'];
+                echo "<option value='{$cat_id}'>$cat_title</option>";
+            }
+            ?>
+        </select>
+
     </div>
     <div class="form-group">
         <label for="post_author">Post Author</label>

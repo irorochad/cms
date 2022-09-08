@@ -27,21 +27,30 @@
             $postAuthor = $row['post_author'];
             $postDate = $row['post_date'];
             $postImg = $row['post_image'];
-            $postComments = $row['post_content'];
+            $postContents = $row['post_content'];
             $postTags = $row['post_tags'];
             $postStatus = $row['post_status'];
 
             echo "<tr>";
             echo "<td>$postId</td>";
-            echo "<td>$post_cat_Id</td>";
+
+            $query = "SELECT * FROM categories WHERE cat_id = $post_cat_Id ";
+            $select_All_cats = mysqli_query($db_Connection, $query);
+
+            while ($row = mysqli_fetch_assoc($select_All_cats)) {
+                $cat_title = $row['cat_title'];
+                $cat_id = $row['cat_id'];
+                echo "<td>{$cat_title}</td>";
+            }
+
             echo "<td>$postAuthor</td>";
             echo "<td>$postTitle</td>";
             echo "<td>$postStatus</td>";
             echo "<td><img src='../images/$postImg' width='60' /></td>";
             echo "<td>$postTags</td>";
-            echo "<td>$postComments</td>";
+            echo "<td>$postContents</td>";
             echo "<td>$postDate </td>";
-            echo "<td><a href='posts.php?delete={$postId}'>Delete</a></td>";
+            echo "<td>  <a href='posts.php?source=edit_post&p_id={$postId}'>Edit</a> <a href='posts.php?delete={$postId}'>Delete</a></td>";
             echo "</tr>";
         }
         ?>

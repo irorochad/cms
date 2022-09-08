@@ -30,8 +30,8 @@
                             include "includes/addPost.inc.php";
                             break;
 
-                        case 400:
-                            echo "Page 4";
+                        case 'edit_post':
+                            include "includes/edit_post.inc.php";
                             break;
 
                         case 600:
