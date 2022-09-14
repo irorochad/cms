@@ -7,9 +7,10 @@
             <th>Author</th>
             <th>Post Title</th>
             <th>Staus</th>
+            <th>Num. of Comments</th>
             <th>Image</th>
             <th>Tags</th>
-            <th>Comments</th>
+            <th>Posts</th>
             <th>Date</th>
             <th>Actions</th>
         </tr>
@@ -30,6 +31,8 @@
             $postContents = $row['post_content'];
             $postTags = $row['post_tags'];
             $postStatus = $row['post_status'];
+            $postcommentCounts = $row['post_comment_counts'];
+            
 
             echo "<tr>";
             echo "<td>$postId</td>";
@@ -46,6 +49,7 @@
             echo "<td>$postAuthor</td>";
             echo "<td>$postTitle</td>";
             echo "<td>$postStatus</td>";
+            echo "<td>$postcommentCounts</td>";
             echo "<td><img src='../images/$postImg' width='60' /></td>";
             echo "<td>$postTags</td>";
             echo "<td>$postContents</td>";

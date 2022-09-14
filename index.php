@@ -34,9 +34,7 @@ include "includes/header.inc.php";
                     $post_contnet = substr($row['post_content'], 0, 100);
                     $post_tags = $row['post_tags'];
 
-
                 ?>
-
 
                     <!--  Blog Post -->
                     <h2>

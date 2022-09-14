@@ -2,12 +2,12 @@
 
 if (isset($_POST['postBtn'])) {
     $post_cat_Id = $_POST['post_category'];
-    $postTitle = $_POST['post_title'];
-    $postAuthor = $_POST['post_author'];
+    $postTitle = mysqli_real_escape_string($db_Connection, $_POST['post_title']);
+    $postAuthor = mysqli_real_escape_string($db_Connection, $_POST['post_author']);
     $postStatus = $_POST['post_status'];
-    $postTags = $_POST['post_tags'];
-    $postContents = $_POST['post_content'];
-    $postCommentsCounts = 4;
+    $postTags = mysqli_real_escape_string($db_Connection, $_POST['post_tags']);
+    $postContents = mysqli_real_escape_string($db_Connection, $_POST['post_content']);
+    // $postCommentsCounts = 4;
 
     $postImage = $_FILES['post_img']['name'];
     $post_img_temp = $_FILES['post_img']['tmp_name'];
@@ -17,7 +17,7 @@ if (isset($_POST['postBtn'])) {
     move_uploaded_file($post_img_temp, "../images/$postImage");
 
     $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_comment_counts, post_status) ";
-    $query .= "VALUES ({$post_cat_Id}, '{$postTitle}', '{$postAuthor}', now(), '{$postImage}', '{$postContents}', '{$postTags}', '{$postCommentsCounts}', '{$postStatus}')";
+    $query .= "VALUES ({$post_cat_Id}, '{$postTitle}', '{$postAuthor}', now(), '{$postImage}', '{$postContents}', '{$postTags}', 0, '{$postStatus}')";
 
     $insertQuery = mysqli_query($db_Connection, $query);
 

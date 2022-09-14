@@ -19,6 +19,7 @@ function searchFunc()
     } else {
 
         while ($row = mysqli_fetch_assoc($fetch_all_posts_data)) {
+            $post_id = $row['post_id'];
             $post_title = $row['post_title'];
             $post_author = $row['post_author'];
             $post_date = $row['post_date'];
@@ -38,10 +39,11 @@ function searchFunc()
             </p>
             <p><span class="glyphicon glyphicon-time"></span> Posted on: <?php echo $post_date; ?></p>
             <hr>
-            <img class="img-responsive" src="https://placehold.co/900x300" alt="">
+            <img class="img-responsive" <?php echo "src='./images/$post_image'"; ?> alt="">
+
             <hr>
             <p><?php echo $post_contnet; ?></p>
-            <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
             <hr>
 
