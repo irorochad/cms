@@ -30,9 +30,9 @@
                             include "includes/addUser.inc.php";
                             break;
 
-                        // case 'edit_post':
-                        //     include "includes/edit_post.inc.php";
-                        //     break;
+                        case 'edit_user':
+                            include "includes/edit_user.inc.php";
+                            break;
 
                         default:
                             include "includes/view_all_users.inc.php";

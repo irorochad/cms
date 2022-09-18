@@ -60,8 +60,8 @@ if (isset($_POST['addUserBTN'])) {
     <div class="form-group">
 
         <select name="userRole">
-            <option>admin</option>
             <option>subscriber</option>
+            <option>admin</option>
         </select>
     </div>
 

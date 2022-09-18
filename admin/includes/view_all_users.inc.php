@@ -36,8 +36,9 @@
 
             
 
-            echo "<td><a href='users.php?admin=$id'>Make Admin</a> </td>";
-            echo "<td><a href='users.php?subscriber=$id'>Make Sub</a> </td>";
+            // echo "<td><a href='users.php?admin=$id'>Make Admin</a> </td>";
+            // echo "<td><a href='users.php?subscriber=$id'>Make Sub</a> </td>";
+            echo "<td><a href='users.php?source=edit_user&id=$id'>Edit</a> </td>";
             echo "<td><a href='users.php?delete=$id'>Delete</a></td>";
             echo "</tr>";
         }
@@ -45,21 +46,21 @@
 
         <!-- Actions to approve, unapprove, and delete comment here -->
         <?php
-        if (isset($_GET['admin'])) {
-            $the_user_id = $_GET['admin'];
+        // if (isset($_GET['admin'])) {
+        //     $the_user_id = $_GET['admin'];
 
-            $query = "UPDATE users SET user_role = 'admin' WHERE id = $the_user_id ";
-            $query_admin_users = mysqli_query($db_Connection, $query);
-            header("Location: users.php");
-        }
+        //     $query = "UPDATE users SET user_role = 'admin' WHERE id = $the_user_id ";
+        //     $query_admin_users = mysqli_query($db_Connection, $query);
+        //     header("Location: users.php");
+        // }
 
-        if (isset($_GET['subscriber'])) {
-            $the_user_id = $_GET['subscriber'];
+        // if (isset($_GET['subscriber'])) {
+        //     $the_user_id = $_GET['subscriber'];
 
-            $query = "UPDATE users SET user_role = 'subscriber' WHERE id = $the_user_id ";
-            $query_admin_users = mysqli_query($db_Connection, $query);
-            header("Location: users.php");
-        }
+        //     $query = "UPDATE users SET user_role = 'subscriber' WHERE id = $the_user_id ";
+        //     $query_admin_users = mysqli_query($db_Connection, $query);
+        //     header("Location: users.php");
+        // }
 
         if (isset($_GET['delete'])) {
             $the_user_id= $_GET['delete'];
