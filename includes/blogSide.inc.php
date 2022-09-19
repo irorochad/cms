@@ -7,6 +7,28 @@
     <!-- Blog Search Well -->
     <div class="well">
         <h4>Blog Search</h4>
+        <form method="POST" action="includes/login.php">
+            <div class="form-group">
+                <label for="username">Your Username</label>
+                <input type="text" class="form-control" name="username" placeholder="username">
+            </div>
+            <div class="input-group">
+                <input type="password" class="form-control" name="userPassword" placeholder="password">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit" name="loginBtn">
+                        Login
+                    </button>
+                </span>
+            </div>
+
+
+        </form>
+        <!-- /.input-group -->
+    </div>
+
+    <!--  Login = -->
+    <div class="well">
+        <h4>Blog Search</h4>
         <form method="POST" action="./search.php">
             <div class="input-group">
                 <input type="text" class="form-control" name="search-data" placeholder="Search...">
@@ -44,7 +66,7 @@
             </div>
             <!-- /.col-lg-6 -->
             <div class="col-lg-6">
-                
+
             </div>
             <!-- /.col-lg-6 -->
         </div>
